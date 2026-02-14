@@ -102,6 +102,12 @@ This schema defines the structure for our Notion workspace. It's dynamic — upd
 
 ---
 
+## Business Separation (Hard Rule)
+
+- Keep **10K MRR** files/pages in a **separate Notion section** from the **runway-generation business** materials (e.g., FreshRaise UK). These are two distinct businesses and should not be mixed.
+
+---
+
 ## Maintenance Rules
 
 1. **Before creating a page:** Search for existing similar pages
