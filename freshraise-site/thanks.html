@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>You're in — FreshRaise UK</title>
+  <meta name="description" content="Thanks for subscribing to FreshRaise UK." />
+
+  <meta name="theme-color" content="#0f766e" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,200..900,0..100&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--paper:#fbf7ef;--ink:#11121a;--muted:#4b5160;--line:rgba(17,18,26,.14);--shadow:0 20px 60px rgba(9,10,20,.15);--brand:#0f766e;--radius:18px;--serif:"Fraunces", ui-serif, Georgia, serif;--sans:"IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;}
+    *{box-sizing:border-box}
+    body{margin:0;color:var(--ink);font-family:var(--sans);background:linear-gradient(180deg,#fffaf2 0%, var(--paper) 60%, #fffaf2 100%);} 
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");mix-blend-mode:multiply;opacity:.55;}
+    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:980px;margin:0 auto;padding:56px 20px 70px;position:relative}
+    .card{border:1px solid var(--line);background:rgba(255,255,255,.72);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);backdrop-filter: blur(6px)}
+    h1{font-family:var(--serif);font-weight:650;letter-spacing:-.02em;margin:0 0 10px;font-size:44px;line-height:1.05}
+    p{color:var(--muted);line-height:1.75;margin:0 0 12px}
+    .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-bottom:22px}
+    .brand{display:flex;gap:12px;align-items:center;color:var(--ink);text-decoration:none}
+    .mark{width:44px;height:44px;border-radius:14px;border:1px solid var(--line);background:#fbf7ef;display:grid;place-items:center;box-shadow:0 12px 26px rgba(0,0,0,.10);overflow:hidden}
+    .mark img{width:44px;height:44px;display:block}
+    .brandText b{display:block;font-weight:800} .brandText span{display:block;font-size:13px;color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.65);color:var(--ink);font-weight:700;text-decoration:none}
+    .btn:hover{background:rgba(255,255,255,.85)}
+    .list{margin:10px 0 0;padding-left:18px;color:var(--muted);line-height:1.75}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="row">
+      <a class="brand" href="/" aria-label="FreshRaise UK">
+        <div class="mark" aria-hidden="true"><img src="/favicon.svg" alt="" /></div>
+        <div class="brandText">
+          <b>FreshRaise UK</b>
+          <span>Newly funded UK startups • weekly</span>
+        </div>
+      </a>
+      <a class="btn" href="https://www.notion.so/FreshRaise-UK-Sample-List-Feb-14-2026-307072a7639281d39c7afe15eab83b83" target="_blank" rel="noreferrer">View sample report</a>
+    </div>
+
+    <div class="card">
+      <h1>You’re in.</h1>
+      <p>Thanks for subscribing. You’ll receive your weekly FreshRaise delivery by email (Notion link + CSV).</p>
+      <p><b>What happens next:</b></p>
+      <ul class="list">
+        <li>We’ll send a short welcome email from <a href="mailto:hello@freshraise.co.uk">hello@freshraise.co.uk</a>.</li>
+        <li>Your first delivery will arrive on the next weekly run (default: Monday morning UK time).</li>
+        <li>If you have a preferred vertical (recruiting vs outbound vs agencies), just reply to the welcome email.</li>
+      </ul>
+      <p style="margin-top:14px">Questions? Email <a href="mailto:hello@freshraise.co.uk">hello@freshraise.co.uk</a>.</p>
+      <p style="font-size:12px">If you don’t see emails, check Promotions/Spam and add us to your contacts.</p>
+    </div>
+  </div>
+</body>
+</html>
