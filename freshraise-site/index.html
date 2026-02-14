@@ -6,6 +6,12 @@
   <title>FreshRaise UK — Newly funded UK startups, delivered weekly</title>
   <meta name="description" content="FreshRaise UK delivers a weekly list of newly funded UK startups with hiring signals and outreach angles. £149/month." />
 
+  <meta name="theme-color" content="#0f766e" />
+
+  <!-- Favicon / app icons -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/site.webmanifest">
+
   <!-- Distinctive typography (avoid generic system stacks) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,18 +70,14 @@
 
     .mark{
       width:40px;height:40px;border-radius:12px;
-      background:conic-gradient(from 210deg, var(--brand), #14b8a6, var(--accent), var(--brand2), var(--brand));
-      box-shadow:0 12px 26px rgba(0,0,0,.12);
+      background:#fbf7ef;
+      border:1px solid var(--line);
+      box-shadow:0 12px 26px rgba(0,0,0,.10);
       position:relative;
       overflow:hidden;
+      display:grid;place-items:center;
     }
-    .mark::after{
-      content:"";
-      position:absolute; inset:1px;
-      border-radius:11px;
-      background:rgba(255,255,255,.75);
-      mix-blend-mode:overlay;
-    }
+    .mark img{width:28px;height:28px;display:block}
 
     .brandText{display:flex;flex-direction:column;line-height:1.05}
     .brandText b{font-weight:800;letter-spacing:.2px}
@@ -210,7 +212,9 @@
   <div class="wrap">
     <div class="nav reveal">
       <a class="brand" href="/" aria-label="FreshRaise UK">
-        <div class="mark" aria-hidden="true"></div>
+        <div class="mark" aria-hidden="true">
+          <img src="/favicon.svg" alt="" />
+        </div>
         <div class="brandText">
           <b>FreshRaise UK</b>
           <span>Newly funded UK startups • weekly</span>

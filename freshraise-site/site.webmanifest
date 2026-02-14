@@ -1,0 +1,11 @@
+{
+  "name": "FreshRaise UK",
+  "short_name": "FreshRaise",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbf7ef",
+  "theme_color": "#0f766e",
+  "icons": [
+    {"src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml"}
+  ]
+}
