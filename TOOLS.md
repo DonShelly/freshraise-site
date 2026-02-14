@@ -2,6 +2,10 @@
 
 Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
 
+## API Rate Limits
+
+- **Brave Search API**: 1 request/second max — space out searches accordingly
+
 ## What Goes Here
 
 Things like:
