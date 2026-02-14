@@ -3,127 +3,286 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FreshRaise UK — Freshly funded UK startup leads</title>
-  <meta name="description" content="FreshRaise UK delivers a weekly list of freshly funded UK startups with hiring signals and outreach angles. £149/month." />
+  <title>FreshRaise UK — Newly funded UK startups, delivered weekly</title>
+  <meta name="description" content="FreshRaise UK delivers a weekly list of newly funded UK startups with hiring signals and outreach angles. £149/month." />
+
+  <!-- Distinctive typography (avoid generic system stacks) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,200..900,0..100&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    :root{--bg:#0a0d14;--card:#0f1522;--text:#eef2ff;--muted:#a6b0c6;--accent:#3b82f6;--line:#1c2942;--shadow:0 12px 40px rgba(0,0,0,.35);}
+    :root{
+      --paper:#fbf7ef;
+      --ink:#11121a;
+      --muted:#4b5160;
+      --line:rgba(17,18,26,.14);
+      --shadow:0 20px 60px rgba(9, 10, 20, .15);
+      --brand:#0f766e;      /* teal */
+      --brand2:#7c2d12;     /* rust */
+      --accent:#1d4ed8;     /* blue */
+      --radius:18px;
+
+      --serif:"Fraunces", ui-serif, Georgia, serif;
+      --sans:"IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+
     *{box-sizing:border-box}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:linear-gradient(180deg,#070a10 0%, #0a0d14 35%, #0a0d14 100%); color:var(--text);}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family:var(--sans);
+      background:
+        radial-gradient(900px 480px at 22% -5%, rgba(15,118,110,.12), transparent 65%),
+        radial-gradient(700px 420px at 88% 0%, rgba(124,45,18,.12), transparent 62%),
+        linear-gradient(180deg, #fffaf2 0%, var(--paper) 55%, #fffaf2 100%);
+    }
+
+    /* Subtle paper grain */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");
+      mix-blend-mode:multiply;
+      opacity:.55;
+    }
+
     a{color:inherit}
-    .wrap{max-width:1040px;margin:0 auto;padding:52px 20px}
-    .nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:34px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
-    .logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#111827,#0b1220);border:1px solid var(--line);display:grid;place-items:center;box-shadow:var(--shadow)}
-    .pill{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);background:rgba(15,21,34,.8);padding:8px 12px;border-radius:999px;color:var(--muted);font-size:13px}
-    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:start;margin-top:18px}
-    @media (max-width: 920px){.hero{grid-template-columns:1fr}}
-    h1{font-size:46px;line-height:1.06;margin:12px 0 12px;letter-spacing:-.02em}
-    p{color:var(--muted);font-size:18px;line-height:1.6;margin:0 0 14px}
-    .card{border:1px solid var(--line);background:rgba(15,21,34,.75);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+
+    .wrap{max-width:1100px;margin:0 auto;padding:56px 20px 70px; position:relative;}
+
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:34px}
+
+    .brand{
+      display:flex;align-items:center;gap:14px;
+      text-decoration:none;
+    }
+
+    .mark{
+      width:40px;height:40px;border-radius:12px;
+      background:conic-gradient(from 210deg, var(--brand), #14b8a6, var(--accent), var(--brand2), var(--brand));
+      box-shadow:0 12px 26px rgba(0,0,0,.12);
+      position:relative;
+      overflow:hidden;
+    }
+    .mark::after{
+      content:"";
+      position:absolute; inset:1px;
+      border-radius:11px;
+      background:rgba(255,255,255,.75);
+      mix-blend-mode:overlay;
+    }
+
+    .brandText{display:flex;flex-direction:column;line-height:1.05}
+    .brandText b{font-weight:800;letter-spacing:.2px}
+    .brandText span{font-size:13px;color:var(--muted)}
+
+    .chip{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.65);
+      box-shadow:0 10px 30px rgba(0,0,0,.06);
+      font-size:13px;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:22px;
+      align-items:start;
+    }
+    @media (max-width: 980px){ .hero{grid-template-columns:1fr} .chip{white-space:normal} }
+
+    h1{
+      font-family:var(--serif);
+      font-weight:650;
+      letter-spacing:-.02em;
+      font-size:54px;
+      line-height:1.02;
+      margin:6px 0 12px;
+    }
+    @media (max-width: 540px){ h1{font-size:42px} }
+
+    .lede{font-size:18px; line-height:1.65; color:var(--muted); margin:0 0 16px}
+
+    .sublede{font-size:14px;color:var(--muted); margin:0}
+
+    .card{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.72);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
     .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:12px;padding:12px 16px;border:1px solid transparent;font-weight:750;text-decoration:none}
-    .btn.primary{background:var(--accent);color:white}
-    .btn.primary:hover{filter:brightness(1.05)}
-    .btn.secondary{border-color:var(--line);background:rgba(15,21,34,.55);color:var(--text)}
-    .btn.secondary:hover{background:rgba(15,21,34,.8)}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
-    @media (max-width: 920px){.grid{grid-template-columns:1fr}}
-    .kpi{display:flex;flex-direction:column;gap:6px}
-    .kpi b{font-size:16px}
-    .kpi span{color:var(--muted);font-size:14px}
-    .section{margin-top:30px}
-    h2{font-size:22px;margin:0 0 10px;letter-spacing:-.01em}
-    ul{margin:10px 0 0;padding-left:18px;color:var(--muted);line-height:1.7}
-    .price{font-size:34px;font-weight:900;margin:0}
-    .small{font-size:13px;color:var(--muted);margin-top:8px}
-    .footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;color:var(--muted);font-size:13px}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid transparent;
+      text-decoration:none;
+      font-weight:700;
+      transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+    }
+    .btn:active{transform:translateY(1px)}
+
+    .btn.primary{
+      background:linear-gradient(180deg, #0f766e, #0c5f58);
+      color:#fff;
+      box-shadow:0 18px 40px rgba(15,118,110,.22);
+    }
+    .btn.primary:hover{box-shadow:0 22px 55px rgba(15,118,110,.30)}
+
+    .btn.secondary{
+      background:rgba(255,255,255,.55);
+      border-color:var(--line);
+      color:var(--ink);
+    }
+    .btn.secondary:hover{background:rgba(255,255,255,.78)}
+
+    .fine{
+      font-size:12px;color:var(--muted);
+      margin-top:10px;line-height:1.5
+    }
+
+    .price{
+      display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+      padding-bottom:12px;margin-bottom:12px;border-bottom:1px dashed rgba(17,18,26,.18)
+    }
+    .price strong{font-size:34px}
+    .price span{color:var(--muted);font-size:13px}
+
+    .kpis{display:grid;grid-template-columns:1fr;gap:10px;margin-top:10px}
+    .kpi{
+      border:1px solid rgba(17,18,26,.10);
+      background:rgba(255,255,255,.6);
+      border-radius:14px;
+      padding:12px;
+    }
+    .kpi b{display:block;font-size:14px}
+    .kpi i{display:block;font-style:normal;font-size:13px;color:var(--muted);margin-top:4px}
+
+    .section{margin-top:26px}
+
+    h2{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;font-size:24px;margin:0 0 10px}
+
+    ul{margin:10px 0 0; padding-left:18px; color:var(--muted); line-height:1.75}
+
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width: 820px){ .split{grid-template-columns:1fr} }
+
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .tag{
+      font-size:12px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(17,18,26,.12);
+      background:rgba(255,255,255,.55);
+      color:rgba(17,18,26,.82);
+    }
+
+    .hr{height:1px;background:var(--line);margin:16px 0}
+
+    .footer{margin-top:42px;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;color:var(--muted);font-size:13px}
     .links a{color:var(--muted);text-decoration:none;margin-right:10px}
-    .links a:hover{color:var(--text)}
-    .tag{display:inline-block;font-size:12px;color:#d7dfff;border:1px solid var(--line);padding:6px 10px;border-radius:999px;margin:6px 8px 0 0;background:rgba(15,21,34,.45)}
-    .subtle{color:var(--muted);font-size:14px}
-    .hr{height:1px;background:var(--line);margin:18px 0}
-    .twoCol{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    @media (max-width: 920px){.twoCol{grid-template-columns:1fr}}
+    .links a:hover{color:var(--ink)}
+
+    /* tasteful entrance */
+    .reveal{opacity:0; transform:translateY(10px); animation:up .6s ease forwards}
+    .reveal.d2{animation-delay:.08s}
+    .reveal.d3{animation-delay:.16s}
+    .reveal.d4{animation-delay:.24s}
+    @keyframes up{to{opacity:1; transform:none}}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">FR</div>
-        <div>
-          <div>FreshRaise UK</div>
-          <div class="subtle">Freshly funded UK startups • weekly</div>
+    <div class="nav reveal">
+      <a class="brand" href="/" aria-label="FreshRaise UK">
+        <div class="mark" aria-hidden="true"></div>
+        <div class="brandText">
+          <b>FreshRaise UK</b>
+          <span>Newly funded UK startups • weekly</span>
         </div>
-      </div>
-      <div class="pill">Contact: <a href="mailto:hello@freshraise.co.uk">hello@freshraise.co.uk</a></div>
+      </a>
+      <div class="chip">Contact: <a href="mailto:hello@freshraise.co.uk">hello@freshraise.co.uk</a></div>
     </div>
 
     <div class="hero">
-      <div>
-        <div class="pill">For recruiters, B2B sellers & agencies</div>
-        <h1>Newly funded UK startups.<br/>Delivered weekly.</h1>
-        <p>FreshRaise UK gives you a curated list of newly funded UK companies with founder context, hiring signals, and outreach angles—so you can contact the right teams in the 2–6 week post-raise window.</p>
-        <p class="subtle">No fluff. Just companies with money, momentum, and hiring intent.</p>
+      <div class="reveal d2">
+        <div class="chip">Built for recruiters, B2B sellers & agencies — not investors.</div>
+        <h1>Catch startups <em style="font-style:normal;color:var(--brand2)">right after</em> they raise.</h1>
+        <p class="lede">A weekly list of newly funded UK startups with hiring signals, investor context, and outreach angles — delivered as a Notion page + CSV you can actually use.</p>
+        <p class="sublede">The best time to reach out is the 2–6 week post‑raise window. That’s what this is built for.</p>
 
         <div class="cta">
           <a class="btn primary" href="https://buy.stripe.com/test_aFabJ107Y7R5er3aVdcwg00" id="subscribe">Subscribe (£149/mo)</a>
           <a class="btn secondary" href="https://www.notion.so/FreshRaise-UK-Sample-List-Feb-14-2026-307072a7639281d39c7afe15eab83b83" target="_blank" rel="noreferrer">View sample report</a>
         </div>
+        <div class="fine">Cancel anytime. If something goes wrong (billing or missing delivery), email us within 7 days and we’ll make it right.</div>
 
-        <div class="section">
-          <span class="tag">✅ Funding + investors</span>
-          <span class="tag">✅ Founder + LinkedIn</span>
-          <span class="tag">✅ Headcount + hiring heat</span>
-          <span class="tag">✅ “Hot 5” buyer-intent picks</span>
+        <div class="tags" aria-label="What’s included">
+          <span class="tag">Funding + investors</span>
+          <span class="tag">Founder context + LinkedIn</span>
+          <span class="tag">Hiring heat</span>
+          <span class="tag">Hot 5 buyer‑intent picks</span>
         </div>
       </div>
 
-      <div class="card">
-        <h2>Pricing</h2>
-        <p class="price">£149<span style="font-size:14px;font-weight:650;color:var(--muted)">/month</span></p>
-        <p class="small">Cancel anytime. You’ll receive 1 delivery per week (Notion + CSV).</p>
-        <div class="grid" style="grid-template-columns:1fr;gap:10px">
-          <div class="card" style="padding:14px;background:rgba(11,15,25,.35)">
-            <div class="kpi"><b>Delivery format</b><span>Notion page + CSV</span></div>
+      <aside class="card reveal d3" aria-label="Pricing">
+        <div class="price">
+          <div>
+            <strong>£149</strong>
+            <div class="sublede">per month</div>
           </div>
-          <div class="card" style="padding:14px;background:rgba(11,15,25,.35)">
-            <div class="kpi"><b>Coverage</b><span>UK-first, newly funded</span></div>
-          </div>
-          <div class="card" style="padding:14px;background:rgba(11,15,25,.35)">
-            <div class="kpi"><b>Best for</b><span>Recruiters, outbound, agencies</span></div>
-          </div>
+          <span>Weekly delivery</span>
         </div>
-      </div>
+        <div class="kpis">
+          <div class="kpi"><b>Format</b><i>Notion page + CSV</i></div>
+          <div class="kpi"><b>Coverage</b><i>UK-first, newly funded</i></div>
+          <div class="kpi"><b>Use cases</b><i>Recruiting, outbound, agencies</i></div>
+        </div>
+      </aside>
     </div>
 
-    <div class="section card">
+    <div class="section card reveal d4">
       <h2>What you get each week</h2>
-      <div class="twoCol">
+      <div class="split">
         <div>
           <ul>
             <li>15–30 newly funded UK startups (seed → Series A/B depending on the week)</li>
-            <li>Funding details: amount, stage, lead investor + notable participants</li>
-            <li>Founder/team context + LinkedIn links where available</li>
+            <li>Funding details (amount, stage, lead investor + notable participants)</li>
+            <li>Company snapshot: what they’re building + why it matters</li>
           </ul>
         </div>
         <div>
           <ul>
-            <li>Hiring signals: headcount growth, location expansion, stated hiring plans</li>
-            <li>“Hot 5” buyer-intent picks + suggested targets (HR, GTM, Ops, etc.)</li>
-            <li>Delivery as a clean Notion page + a CSV you can upload anywhere</li>
+            <li>Founder/team context + LinkedIn links where available</li>
+            <li>Hiring signals (headcount growth, location expansion, stated hiring plans)</li>
+            <li>Hot 5 commentary: best prospecting opportunities + suggested targets</li>
           </ul>
         </div>
       </div>
       <div class="hr"></div>
-      <p class="subtle"><b>Want to see the format?</b> View the sample report (it’s the exact structure you’ll receive weekly).</p>
+      <p class="sublede"><b>Want to see the exact format?</b> The sample report is the same structure you’ll receive weekly.</p>
     </div>
 
     <div class="section card">
       <h2>FAQ</h2>
-      <p><b>When do you deliver?</b><br/>Weekly. Default is Monday morning UK time.</p>
-      <p><b>Can I cancel?</b><br/>Yes—cancel anytime.</p>
-      <p><b>Refunds?</b><br/>If something goes wrong (billing issue or missing delivery), email us within 7 days and we’ll make it right. See <a href="refunds.html">Refund Policy</a>.</p>
+      <p class="lede" style="margin-bottom:10px"><b>When do you deliver?</b><br/>Weekly. Default is Monday morning UK time.</p>
+      <p class="lede" style="margin-bottom:10px"><b>Can I cancel?</b><br/>Yes — cancel anytime.</p>
+      <p class="lede" style="margin-bottom:0"><b>Refunds?</b><br/>See <a href="refunds.html">Refund Policy</a>.</p>
     </div>
 
     <div class="footer">
@@ -135,6 +294,7 @@
       <div>© <span id="year"></span> FreshRaise UK • <a href="mailto:hello@freshraise.co.uk">hello@freshraise.co.uk</a></div>
     </div>
   </div>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
