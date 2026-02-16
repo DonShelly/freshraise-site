@@ -61,21 +61,27 @@
 
     .wrap{max-width:1100px;margin:0 auto;padding:56px 20px 70px; position:relative;}
 
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:34px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:34px;flex-wrap:wrap}
+    @media (max-width: 540px){ 
+      .nav{gap:12px}
+      .nav .chip{order:3;width:100%;justify-content:center;margin-top:4px}
+    }
 
     .brand{
       display:flex;align-items:center;gap:14px;
       text-decoration:none;
+      flex-shrink:0;
     }
 
     .mark{
-      width:44px;height:44px;border-radius:14px;
+      width:44px;height:44px;min-width:44px;border-radius:14px;
       background:#fbf7ef;
       border:1px solid var(--line);
       box-shadow:0 12px 26px rgba(0,0,0,.10);
       position:relative;
       overflow:hidden;
       display:grid;place-items:center;
+      flex-shrink:0;
     }
     .mark img{width:40px;height:40px;display:block}
 
